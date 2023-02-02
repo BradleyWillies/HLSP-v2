@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+          xmlns:c="http://java.sun.com/jsp/jstl/core"
+          xmlns:f="http://java.sun.com/jsp/jstl/fmt"
+          version="2.0">
+
+<jsp:directive.page language="java" 
+	contentType="text/html" pageEncoding="UTF-8" />
+<jsp:element name="html">
+<jsp:body>
+
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<title>Healthy-Life</title>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+			crossorigin="anonymous"/>
+		
+	</head>
+	<body>
+	
+		<jsp:include page="header.jsp"/>
+	
+		<main>
+	
+			<section class="py-5 text-center container">
+				<div class="row py-lg-5">
+					<div class="col-lg-6 col-md-8 mx-auto">
+						<h1 class="fw-light">Hello <c:out value="${userSession.getUser().email}"/>!</h1>
+						<p class="lead text-muted">Submit a daily lifestyle entry using the button below</p>
+							<a href="/dailyEntryForm" class="btn btn-primary">Submit entry</a>
+					</div>
+				</div>
+			</section>
+	
+			<div class="album py-5 bg-light">
+				<div class="container">
+				
+					<div class="text-center py-5">
+						<h3>Daily Statistics</h3>
+						<p id="filter-status"></p>
+					</div>
+					
+					<div class="container">
+						<div class="mb-2 d-flex justify-content-end">
+						<select id="filters" name="filters">
+	                		<c:if test="${userSession.getUser().dashboardFilter == 'all'}"><option value="all" selected="true">All</option></c:if>
+				            <c:if test="${userSession.getUser().dashboardFilter != 'all'}"><option value="all">All</option></c:if>
+				            <c:if test="${userSession.getUser().dashboardFilter == 'meals'}"><option value="meals" selected="true">Meals</option></c:if>
+				            <c:if test="${userSession.getUser().dashboardFilter != 'meals'}"><option value="meals">Meals</option></c:if>
+				            <c:if test="${userSession.getUser().dashboardFilter == 'exercise'}"><option value="exercise" selected="true">Exercise</option></c:if>
+				            <c:if test="${userSession.getUser().dashboardFilter != 'exercise'}"><option value="exercise">Exercise</option></c:if>
+				            <c:if test="${userSession.getUser().dashboardFilter == 'work'}"><option value="work" selected="true">Work</option></c:if>
+				            <c:if test="${userSession.getUser().dashboardFilter != 'work'}"><option value="work">Work</option></c:if>
+				            <c:if test="${userSession.getUser().dashboardFilter == 'sleep'}"><option value="sleep" selected="true">Sleep</option></c:if>
+				            <c:if test="${userSession.getUser().dashboardFilter != 'sleep'}"><option value="sleep">Sleep</option></c:if>
+				            <c:if test="${userSession.getUser().dashboardFilter == 'meditation'}"><option value="meditation" selected="true">Meditation</option></c:if>
+				            <c:if test="${userSession.getUser().dashboardFilter != 'meditation'}"><option value="meditation">Meditation</option></c:if>
+				        </select>
+				        </div>
+				    </div>
+					
+					
+					<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+						<div class="col" id="meals-card" style="display:${userSession.getUser().dashboardFilter == 'meals' || userSession.getUser().dashboardFilter == 'all' || userSession.getUser().dashboardFilter == null ? 'block' : 'none'}">
+									<div class="card shadow-sm">
+										<svg class="bd-placeholder-img card-img-top" width="100%"
+											height="225" xmlns="http://www.w3.org/2000/svg" role="img"
+											aria-label="Placeholder: Thumbnail"
+											preserveAspectRatio="xMidYMid slice" focusable="false">
+											<title>Placeholder</title><rect width="100%" height="100%"
+												fill="#55595c"></rect>
+											<text x="50%" y="50%" fill="#eceeef" dy=".3em">Graph Placeholder</text></svg>
+			
+										<div class="card-body">
+											<h4>Meals</h4>
+											<div class="d-flex justify-content-between align-items-center">
+												<p class="card-text">Calories consumed: </p>
+												<p class="fw-bold">
+													<c:choose>
+														<c:when test="${empty userSession.getDailyEntry().mealCalories}">
+															<c:out value="0"/>
+														</c:when>
+														<c:otherwise>
+															<c:out value="${userSession.getDailyEntry().mealCalories}"/>
+														</c:otherwise>
+													</c:choose>
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+						
+						<div class="col" id="exercise-card" style="display:${userSession.getUser().dashboardFilter == 'exercise' || userSession.getUser().dashboardFilter == 'all' || userSession.getUser().dashboardFilter == null ? 'block' : 'none'}">
+							<div class="card shadow-sm">
+								<svg class="bd-placeholder-img card-img-top" width="100%"
+									height="225" xmlns="http://www.w3.org/2000/svg" role="img"
+									aria-label="Placeholder: Thumbnail"
+									preserveAspectRatio="xMidYMid slice" focusable="false">
+									<title>Placeholder</title><rect width="100%" height="100%"
+										fill="#55595c"></rect>
+									<text x="50%" y="50%" fill="#eceeef" dy=".3em">Graph Placeholder</text></svg>
+	
+								<div class="card-body">
+									<h4>Exercise</h4>
+									<div class="d-flex justify-content-between align-items-center">
+										<p class="card-text">Calories burned: </p>
+										<p class="fw-bold">
+											<c:choose>
+												<c:when test="${empty userSession.getDailyEntry().exerciseCalories}">
+													<c:out value="0"/>
+												</c:when>
+												<c:otherwise>
+													<c:out value="${userSession.getDailyEntry().exerciseCalories}"/>
+												</c:otherwise>
+											</c:choose>
+										</p>
+									</div>
+									<div class="d-flex justify-content-between align-items-center">
+										<p class="card-text">Time exercised: </p>
+										<p class="fw-bold">
+											<c:choose>
+												<c:when test="${empty userSession.getDailyEntry().exerciseTime}">
+													<c:out value="0"/>
+												</c:when>
+												<c:otherwise>
+													<c:out value="${userSession.getDailyEntry().exerciseTime}"/>
+												</c:otherwise>
+											</c:choose>
+										</p>
+									</div>
+									<div class="d-flex justify-content-between align-items-center">
+										<p class="card-text">Step count: </p>
+										<p class="fw-bold">
+											<c:choose>
+												<c:when test="${empty userSession.getDailyEntry().exerciseSteps}">
+													<c:out value="0"/>
+												</c:when>
+												<c:otherwise>
+													<c:out value="${userSession.getDailyEntry().exerciseSteps}"/>
+												</c:otherwise>
+											</c:choose>
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<div class="col" id="work-card" style="display:${userSession.getUser().dashboardFilter == 'work' || userSession.getUser().dashboardFilter == 'all' || userSession.getUser().dashboardFilter == null ? 'block' : 'none'}">
+							<div class="card shadow-sm">
+								<svg class="bd-placeholder-img card-img-top" width="100%"
+									height="225" xmlns="http://www.w3.org/2000/svg" role="img"
+									aria-label="Placeholder: Thumbnail"
+									preserveAspectRatio="xMidYMid slice" focusable="false">
+									<title>Placeholder</title><rect width="100%" height="100%"
+										fill="#55595c"></rect>
+									<text x="50%" y="50%" fill="#eceeef" dy=".3em">Graph Placeholder</text></svg>
+	
+								<div class="card-body">
+									<h4>Work</h4>
+									<div class="d-flex justify-content-between align-items-center">
+										<p class="card-text">Time worked: </p>
+										<p class="fw-bold">
+											<c:choose>
+												<c:when test="${empty userSession.getDailyEntry().workTime}">
+													<c:out value="0"/>
+												</c:when>
+												<c:otherwise>
+													<c:out value="${userSession.getDailyEntry().workTime}"/>
+												</c:otherwise>
+											</c:choose>
+										</p>
+									</div>
+									<div class="d-flex justify-content-between align-items-center">
+										<p class="card-text">Stressfulness: </p>
+										<p class="fw-bold">
+											<c:choose>
+												<c:when test="${empty userSession.getDailyEntry().workStress}">
+													<c:out value="-"/>
+												</c:when>
+												<c:when test="${userSession.getDailyEntry().workStress == 1}">
+													<c:out value="Not very stressful"/>
+												</c:when>
+												<c:when test="${userSession.getDailyEntry().workStress == 2}">
+													<c:out value="Mildly stressful"/>
+												</c:when>
+												<c:when test="${userSession.getDailyEntry().workStress == 3}">
+													<c:out value="Very stressful"/>
+												</c:when>
+											</c:choose>
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<div class="col" id="sleep-card" style="display:${userSession.getUser().dashboardFilter == 'sleep' || userSession.getUser().dashboardFilter == 'all' || userSession.getUser().dashboardFilter == null ? 'block' : 'none'}">
+							<div class="card shadow-sm">
+								<svg class="bd-placeholder-img card-img-top" width="100%"
+									height="225" xmlns="http://www.w3.org/2000/svg" role="img"
+									aria-label="Placeholder: Thumbnail"
+									preserveAspectRatio="xMidYMid slice" focusable="false">
+									<title>Placeholder</title><rect width="100%" height="100%"
+										fill="#55595c"></rect>
+									<text x="50%" y="50%" fill="#eceeef" dy=".3em">Graph Placeholder</text></svg>
+	
+								<div class="card-body">
+									<h4>Sleep</h4>
+									<div class="d-flex justify-content-between align-items-center">
+										<p class="card-text">Time slept: </p>
+										<p class="fw-bold">
+											<c:choose>
+												<c:when test="${empty userSession.getDailyEntry().sleepTime}">
+													<c:out value="0"/>
+												</c:when>
+												<c:otherwise>
+													<c:out value="${userSession.getDailyEntry().sleepTime}"/>
+												</c:otherwise>
+											</c:choose>
+										</p>
+									</div>
+									<div class="d-flex justify-content-between align-items-center">
+										<p class="card-text">Restfulness: </p>
+										<p class="fw-bold">
+											<c:choose>
+												<c:when test="${empty userSession.getDailyEntry().sleepRestfulness}">
+													<c:out value="-"/>
+												</c:when>
+												<c:when test="${userSession.getDailyEntry().sleepRestfulness == 1}">
+													<c:out value="Not very restful"/>
+												</c:when>
+												<c:when test="${userSession.getDailyEntry().sleepRestfulness == 2}">
+													<c:out value="Mildly restful"/>
+												</c:when>
+												<c:when test="${userSession.getDailyEntry().sleepRestfulness == 3}">
+													<c:out value="Very restful"/>
+												</c:when>
+											</c:choose>
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<div class="col" id="meditation-card" style="display:${userSession.getUser().dashboardFilter == 'meditation' || userSession.getUser().dashboardFilter == 'all' || userSession.getUser().dashboardFilter == null ? 'block' : 'none'}">
+							<div class="card shadow-sm">
+								<svg class="bd-placeholder-img card-img-top" width="100%"
+									height="225" xmlns="http://www.w3.org/2000/svg" role="img"
+									aria-label="Placeholder: Thumbnail"
+									preserveAspectRatio="xMidYMid slice" focusable="false">
+									<title>Placeholder</title><rect width="100%" height="100%"
+										fill="#55595c"></rect>
+									<text x="50%" y="50%" fill="#eceeef" dy=".3em">Graph Placeholder</text></svg>
+	
+								<div class="card-body">
+									<h4>Meditation</h4>
+									<div class="d-flex justify-content-between align-items-center">
+										<p class="card-text">Time meditated: </p>
+										<p class="fw-bold">
+											<c:choose>
+												<c:when test="${empty userSession.getDailyEntry().meditationTime}">
+													<c:out value="0"/>
+												</c:when>
+												<c:otherwise>
+													<c:out value="${userSession.getDailyEntry().meditationTime}"/>
+												</c:otherwise>
+											</c:choose>
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+	
+		</main>
+	
+		
+		<jsp:include page="footer.jsp"/>
+		
+		<script src="js/dashboard.js"><!-- XYZ --></script>
+		
+	</body>
+
+</jsp:body>
+</jsp:element>
+</jsp:root>
