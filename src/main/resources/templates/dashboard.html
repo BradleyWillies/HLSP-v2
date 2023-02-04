@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<title>Healthy-Life</title>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+			crossorigin="anonymous"/>
+		
+	</head>
+	<body>
+	
+		<div th:include="header :: header"></div>
+	
+		<main>
+	
+			<section class="py-5 text-center container">
+				<div class="row py-lg-5">
+					<div class="col-lg-6 col-md-8 mx-auto">
+						<h1 class="fw-light">Hello <span th:text="${userSession.user.email}"></span>!</h1>
+						<p class="lead text-muted">Submit a daily lifestyle entry using the button below</p>
+							<a href="/dailyEntryForm" class="btn btn-primary">Submit entry</a>
+					</div>
+				</div>
+			</section>
+	
+			<div class="album py-5 bg-light">
+				<div class="container">
+				
+					<div class="text-center py-5">
+						<h3>Daily Statistics</h3>
+						<p id="filter-status"></p>
+					</div>
+					
+					<div class="container">
+						<div class="mb-2 d-flex justify-content-end">
+						<select id="filters" name="filters">
+	                		<option th:if="${userSession.user.dashboardFilter == 'all'}" th:value="all" th:selected="true">All</option>
+				            <option th:if="${userSession.user.dashboardFilter != 'all'}" th:value="all">All</option>
+				            <option th:if="${userSession.user.dashboardFilter == 'meals'}" th:value="meals" th:selected="true">Meals</option>
+				            <option th:if="${userSession.user.dashboardFilter != 'meals'}" th:value="meals">Meals</option>
+				            <option th:if="${userSession.user.dashboardFilter == 'exercise'}" th:value="exercise" th:selected="true">Exercise</option>
+				            <option th:if="${userSession.user.dashboardFilter != 'exercise'}" th:value="exercise">Exercise</option>
+				            <option th:if="${userSession.user.dashboardFilter == 'work'}" th:value="work" th:selected="true">Work</option>
+				            <option th:if="${userSession.user.dashboardFilter != 'work'}" th:value="work">Work</option>
+				            <option th:if="${userSession.user.dashboardFilter == 'sleep'}" th:value="sleep" th:selected="true">Sleep</option>
+				            <option th:if="${userSession.user.dashboardFilter != 'sleep'}" th:value="sleep">Sleep</option>
+				            <option th:if="${userSession.user.dashboardFilter == 'meditation'}" th:value="meditation" th:selected="true">Meditation</option>
+				            <option th:if="${userSession.user.dashboardFilter != 'meditation'}" th:value="meditation">Meditation</option>
+				        </select>
+				        </div>
+				    </div>
+					
+					
+					<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+						<div class="col" id="meals-card" th:style="${userSession.getUser().dashboardFilter == 'meals' || userSession.getUser().dashboardFilter == 'all' || userSession.getUser().dashboardFilter == null ? 'display:block;' : 'display:none;'}">
+									<div class="card shadow-sm">
+										<svg class="bd-placeholder-img card-img-top" width="100%"
+											height="225" xmlns="http://www.w3.org/2000/svg" role="img"
+											aria-label="Placeholder: Thumbnail"
+											preserveAspectRatio="xMidYMid slice" focusable="false">
+											<title>Placeholder</title><rect width="100%" height="100%"
+												fill="#55595c"></rect>
+											<text x="50%" y="50%" fill="#eceeef" dy=".3em">Graph Placeholder</text></svg>
+			
+										<div class="card-body">
+											<h4>Meals</h4>
+											<div class="d-flex justify-content-between align-items-center">
+												<p class="card-text">Calories consumed: </p>
+												<p class="fw-bold">
+													<span th:text="${userSession.getDailyEntry().mealCalories != null ? userSession.getDailyEntry().mealCalories : 0}">0</span>
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+												
+						<div class="col" id="exercise-card" th:style="${userSession.getUser().dashboardFilter == 'exercise' || userSession.getUser().dashboardFilter == 'all' || userSession.getUser().dashboardFilter == null ? 'display:block;' : 'display:none;'}">
+							<div class="card shadow-sm">
+								<svg class="bd-placeholder-img card-img-top" width="100%"
+									height="225" xmlns="http://www.w3.org/2000/svg" role="img"
+									aria-label="Placeholder: Thumbnail"
+									preserveAspectRatio="xMidYMid slice" focusable="false">
+									<title>Placeholder</title><rect width="100%" height="100%"
+										fill="#55595c"></rect>
+									<text x="50%" y="50%" fill="#eceeef" dy=".3em">Graph Placeholder</text></svg>
+	
+								<div class="card-body">
+									<h4>Exercise</h4>
+									<div class="d-flex justify-content-between align-items-center">
+										<p class="card-text">Calories burned: </p>
+										<p class="fw-bold">
+											<span th:text="${userSession.getDailyEntry().exerciseCalories != null ? userSession.getDailyEntry().exerciseCalories : 0}">0</span>
+										</p>
+									</div>
+									<div class="d-flex justify-content-between align-items-center">
+										<p class="card-text">Time exercised: </p>
+										<p class="fw-bold">
+											<span th:text="${userSession.getDailyEntry().exerciseTime != null ? userSession.getDailyEntry().exerciseTime : 0}">0</span>
+										</p>
+									</div>
+									<div class="d-flex justify-content-between align-items-center">
+										<p class="card-text">Step count: </p>
+										<p class="fw-bold">
+											<span th:text="${userSession.getDailyEntry().exerciseSteps != null ? userSession.getDailyEntry().exerciseSteps : 0}">0</span>
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<div class="col" id="work-card" th:style="${userSession.getUser().dashboardFilter == 'work' || userSession.getUser().dashboardFilter == 'all' || userSession.getUser().dashboardFilter == null ? 'display:block;' : 'display:none;'}">
+							<div class="card shadow-sm">
+								<svg class="bd-placeholder-img card-img-top" width="100%"
+									height="225" xmlns="http://www.w3.org/2000/svg" role="img"
+									aria-label="Placeholder: Thumbnail"
+									preserveAspectRatio="xMidYMid slice" focusable="false">
+									<title>Placeholder</title><rect width="100%" height="100%"
+										fill="#55595c"></rect>
+									<text x="50%" y="50%" fill="#eceeef" dy=".3em">Graph Placeholder</text></svg>
+	
+								<div class="card-body">
+									<h4>Work</h4>
+									<div class="d-flex justify-content-between align-items-center">
+										<p class="card-text">Time worked: </p>
+										<p class="fw-bold">
+											<span th:text="${userSession.getDailyEntry().workTime != null ? userSession.getDailyEntry().workTime : 0}">0</span>
+										</p>
+									</div>
+									<div class="d-flex justify-content-between align-items-center">
+										<p class="card-text">Stressfulness: </p>
+										<p class="fw-bold">
+											<span th:text="${userSession.getDailyEntry().workStress == null ? '-' : 
+											   userSession.getDailyEntry().workStress == 1 ? 'Not very stressful' : 
+											   userSession.getDailyEntry().workStress == 2 ? 'Mildly stressful' : 
+											   userSession.getDailyEntry().workStress == 3 ? 'Very stressful' : ''}"></span>
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<div class="col" id="sleep-card" th:style="${userSession.getUser().dashboardFilter == 'sleep' || userSession.getUser().dashboardFilter == 'all' || userSession.getUser().dashboardFilter == null ? 'display:block;' : 'display:none;'}">
+							<div class="card shadow-sm">
+								<svg class="bd-placeholder-img card-img-top" width="100%"
+									height="225" xmlns="http://www.w3.org/2000/svg" role="img"
+									aria-label="Placeholder: Thumbnail"
+									preserveAspectRatio="xMidYMid slice" focusable="false">
+									<title>Placeholder</title><rect width="100%" height="100%"
+										fill="#55595c"></rect>
+									<text x="50%" y="50%" fill="#eceeef" dy=".3em">Graph Placeholder</text></svg>
+	
+								<div class="card-body">
+									<h4>Sleep</h4>
+									<div class="d-flex justify-content-between align-items-center">
+										<p class="card-text">Time slept: </p>
+										<p class="fw-bold">
+											<span th:text="${userSession.getDailyEntry().sleepTime != null ? userSession.getDailyEntry().sleepTime : 0}">0</span>
+										</p>
+									</div>
+									<div class="d-flex justify-content-between align-items-center">
+										<p class="card-text">Restfulness: </p>
+										<p class="fw-bold">
+											<span th:text="${userSession.getDailyEntry().sleepRestfulness == null ? '-' : 
+											   userSession.getDailyEntry().sleepRestfulness == 1 ? 'Not very restful' : 
+											   userSession.getDailyEntry().sleepRestfulness == 2 ? 'Mildly restful' : 
+											   userSession.getDailyEntry().sleepRestfulness == 3 ? 'Very restful' : ''}"></span>
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<div class="col" id="meditation-card" th:style="${userSession.getUser().dashboardFilter == 'meditation' || userSession.getUser().dashboardFilter == 'all' || userSession.getUser().dashboardFilter == null ? 'display:block;' : 'display:none;'}">
+							<div class="card shadow-sm">
+								<svg class="bd-placeholder-img card-img-top" width="100%"
+									height="225" xmlns="http://www.w3.org/2000/svg" role="img"
+									aria-label="Placeholder: Thumbnail"
+									preserveAspectRatio="xMidYMid slice" focusable="false">
+									<title>Placeholder</title><rect width="100%" height="100%"
+										fill="#55595c"></rect>
+									<text x="50%" y="50%" fill="#eceeef" dy=".3em">Graph Placeholder</text></svg>
+	
+								<div class="card-body">
+									<h4>Meditation</h4>
+									<div class="d-flex justify-content-between align-items-center">
+										<p class="card-text">Time meditated: </p>
+										<p class="fw-bold">
+											<span th:text="${userSession.getDailyEntry().meditationTime != null ? userSession.getDailyEntry().meditationTime : 0}">0</span>
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+	
+		</main>
+	
+		
+		<div th:include="footer :: footer"></div>
+		
+		<script src="js/dashboard.js"></script>
+		
+	</body>
+
+</html>

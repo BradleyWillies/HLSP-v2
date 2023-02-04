@@ -25,7 +25,7 @@ public class DailyEntryFormController {
 
 	@GetMapping(path = "/dailyEntryForm")
 	public ModelAndView doGet() {
-		return new ModelAndView("dailyEntryForm.jspx");
+		return new ModelAndView("dailyEntryForm.html");
 	}
 
 	@PostMapping(path = "/dailyEntryForm")
@@ -112,10 +112,10 @@ public class DailyEntryFormController {
 			userSession.getDailyEntry().setMeditationTime(meditationTime += userSession.getDailyEntry().getMeditationTime());
 			
 			// set the session attributes and return to the dashboard
-			return new ModelAndView("dashboard.jspx");
+			return new ModelAndView("dashboard.html");
 		} else {
 			// redirect back to login with error for new login attempt
-			ModelAndView modelAndView = new ModelAndView("dailyEntryForm.jspx");
+			ModelAndView modelAndView = new ModelAndView("dailyEntryForm.html");
 			modelAndView.addObject("errors", formErrors);
 			return modelAndView;
 		}

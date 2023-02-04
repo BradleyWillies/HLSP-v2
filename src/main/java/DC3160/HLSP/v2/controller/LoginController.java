@@ -22,7 +22,7 @@ import DC3160.HLSP.v2.service.UserService;
 public class LoginController {
 	@Autowired
 	private UserService userService;
-	a
+	
 	@Autowired
 	private DailyEntryService dailyEntryService;
 
@@ -35,11 +35,11 @@ public class LoginController {
 	public String doGet(@ModelAttribute("userSession") Session userSession) {
 		// if the session exists go to the dashboard
 		if (userSession.getUser() != null) {
-			return "dashboard.jspx";
+			return "dashboard.html";
 		}
 		// otherwise return the login view
 		else {
-			return "login.jspx";
+			return "login.html";
 		}
 	}
 
@@ -64,10 +64,10 @@ public class LoginController {
         	userSession.setDailyEntry(dailyEntry);
 
 			// add to model and session attributes and direct to dashboard
-        	return new ModelAndView("dashboard.jspx");
+        	return new ModelAndView("dashboard.html");
 		} else {
 			// redirect back to login with error for new login attempt
-			ModelAndView modelAndView = new ModelAndView("login.jspx");
+			ModelAndView modelAndView = new ModelAndView("login.html");
         	modelAndView.addObject("error", "Invalid username and password");
         	return modelAndView;
 		}

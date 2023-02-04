@@ -31,16 +31,21 @@ public class RegisterController {
     public Session setUserSession() {
         return new Session();
     }
+	
+	@GetMapping("/")
+	public String home() {
+		return "index";
+	}
 
 	@GetMapping(path = {"/register", ""})
 	public String doGet(@ModelAttribute("userSession") Session userSession) {
 		// if the session exists go to the dashboard
 		if (userSession.getUser() != null) {
-			return "dashboard.jspx";
+			return "dashboard.html";
 		}
 		// otherwise return the register view
 		else {
-			return "index.jspx";
+			return "index.html";
 		}
 	}
 	
@@ -63,7 +68,7 @@ public class RegisterController {
         // if there is a problem creating the user, such as one already exists, reload page
         if (credentialErrors.size() > 0) {
         	// set the list of errors as a model variable
-        	ModelAndView modelAndView = new ModelAndView("index.jspx");
+        	ModelAndView modelAndView = new ModelAndView("index.html");
         	modelAndView.addObject("errors", credentialErrors);
         	// reload page to display errors
         	return modelAndView;
@@ -76,7 +81,7 @@ public class RegisterController {
         	userSession.setDailyEntry(dailyEntry);
         	
         	// direct to dashboard
-        	return new ModelAndView("dashboard.jspx");
+        	return new ModelAndView("dashboard.html");
         }
 	}
 }

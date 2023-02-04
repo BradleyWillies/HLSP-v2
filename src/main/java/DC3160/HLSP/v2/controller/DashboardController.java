@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import DC3160.HLSP.v2.model.Session;
@@ -20,7 +21,7 @@ public class DashboardController {
 	private UserService userService;
 
 	@PostMapping(path = "/updateFilter")
-	public void updateFilter(@RequestParam Map<String, String> formData,
+	public @ResponseBody void updateFilter(@RequestParam Map<String, String> formData,
 			@ModelAttribute("userSession") Session userSession) {		
 	    userService.setDashboardFilter(formData.get("filter"), userSession.getUser().getId());
 		userSession.getUser().setDashboardFilter(formData.get("filter"));
@@ -28,6 +29,6 @@ public class DashboardController {
 	
 	@GetMapping(path = "/dashboard")
 	public String getDashboard() {
-		return "dashboard.jspx";
+		return "dashboard.html";
 	}
 }

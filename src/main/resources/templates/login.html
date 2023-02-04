@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<title>Healthy-Life</title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous"/>
+	</head>
+	<body>
+		<div class="container" id="errorElement">
+			<th:block th:if="${error != null}">
+               <div class="alert alert-danger" role="alert">
+                    <p th:text="${error}"></p>
+               </div>
+          	</th:block>
+		</div>
+	
+		<div class="container col-xl-10 col-xxl-8 px-4 py-5">
+			<div class="row align-items-center g-lg-5 py-5">
+				<div class="col-lg-7 text-center text-lg-start">
+					<h1 class="display-4 fw-bold lh-1 mb-3">Healthy-Life</h1>
+					<p class="col-lg-10 fs-4">Track your lifestyle and get personalised resources to help you improve your
+						<strong id="cycle"></strong>!</p>
+				</div>
+				<div class="col-md-10 mx-auto col-lg-5">
+					<div>
+						<form class="p-4 p-md-5 border rounded-3 bg-light" action="/login" method="POST">
+							<div class="form-floating mb-3">
+								<input name="email" type="email" class="form-control" id="emailInput" placeholder="name@example.com" required="required"/>
+								<label for="emailInput">Email address</label>
+							</div>
+							<div class="form-floating mb-3">
+								<input name="password" type="password" class="form-control" id="passwordInput" placeholder="Password" required="required"/>
+								<label for="passwordInput">Password</label>
+							</div>
+							<button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
+							
+						</form>
+					</div>
+					<br/>
+					<div>
+						<form class="p-4  border rounded-3 bg-light" action="/register" method="GET">
+							<div class="row flex-lg-row align-items-center">
+								<div class="col-lg-6">
+									<p>Not signed up yet?</p>
+								</div>
+								<div class="col-lg-6">
+									<button class="btn btn-outline-secondary btn-lg px-4">Sign up</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<script  src="js/index.js"></script>
+	
+	</body>
+</html>

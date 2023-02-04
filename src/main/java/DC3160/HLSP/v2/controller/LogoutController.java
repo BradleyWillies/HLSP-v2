@@ -18,6 +18,6 @@ public class LogoutController {
 		model.asMap().clear();
 		
 		// direct to index
-		return "index.jspx";
+		return "index.html";
 	}
 }
