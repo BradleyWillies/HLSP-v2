@@ -1,0 +1,116 @@
+2023-02-05 16:22:20.115  INFO 21648 --- [main] DC3160.HLSP.v2.HlspV2Application         : Starting HlspV2Application using Java 15.0.2 on BRAD-PC with PID 21648 (C:\Users\bradl\Documents\University\Stage F\Block 3A\Enterprise Application Technology\Coursework\HLSP-v2\target\classes started by bradl in C:\Users\bradl\Documents\University\Stage F\Block 3A\Enterprise Application Technology\Coursework\HLSP-v2)
+2023-02-05 16:22:20.118  INFO 21648 --- [main] DC3160.HLSP.v2.HlspV2Application         : No active profile set, falling back to 1 default profile: "default"
+2023-02-05 16:22:20.566  INFO 21648 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-02-05 16:22:20.617  INFO 21648 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 44 ms. Found 2 JPA repository interfaces.
+2023-02-05 16:22:21.029  INFO 21648 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-02-05 16:22:21.042  INFO 21648 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-02-05 16:22:21.042  INFO 21648 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.70]
+2023-02-05 16:22:21.312  INFO 21648 --- [main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2023-02-05 16:22:21.342  INFO 21648 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-02-05 16:22:21.343  INFO 21648 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1186 ms
+2023-02-05 16:22:21.461  INFO 21648 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-02-05 16:22:21.493  INFO 21648 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.14.Final
+2023-02-05 16:22:21.606  INFO 21648 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-02-05 16:22:21.686  INFO 21648 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-02-05 16:22:21.919  INFO 21648 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-02-05 16:22:21.941  INFO 21648 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-02-05 16:22:22.345  INFO 21648 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-02-05 16:22:22.350  INFO 21648 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-02-05 16:22:22.629  WARN 21648 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-02-05 16:22:22.741  INFO 21648 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-02-05 16:22:22.888  INFO 21648 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-05 16:22:22.894  INFO 21648 --- [main] DC3160.HLSP.v2.HlspV2Application         : Started HlspV2Application in 3.11 seconds (JVM running for 3.413)
+2023-02-05 16:23:02.521  INFO 21648 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-02-05 16:23:02.521  INFO 21648 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-02-05 16:23:02.522  INFO 21648 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2023-02-05 16:23:02.543  INFO 21648 --- [http-nio-8080-exec-1] D.HLSP.v2.controller.RegisterController  : Hello, world!
+2023-02-05 16:23:10.674  INFO 21648 --- [http-nio-8080-exec-2] D.HLSP.v2.controller.RegisterController  : Hello, world!
+2023-02-05 16:23:16.494  INFO 21648 --- [http-nio-8080-exec-3] D.HLSP.v2.controller.RegisterController  : Hello, world!
+2023-02-05 16:23:23.107  INFO 21648 --- [http-nio-8080-exec-4] D.HLSP.v2.controller.RegisterController  : Hello, world!
+2023-02-05 16:40:27.680  INFO 13232 --- [main] DC3160.HLSP.v2.HlspV2Application         : Starting HlspV2Application using Java 15.0.2 on BRAD-PC with PID 13232 (C:\Users\bradl\Documents\University\Stage F\Block 3A\Enterprise Application Technology\Coursework\HLSP-v2\target\classes started by bradl in C:\Users\bradl\Documents\University\Stage F\Block 3A\Enterprise Application Technology\Coursework\HLSP-v2)
+2023-02-05 16:40:27.682  INFO 13232 --- [main] DC3160.HLSP.v2.HlspV2Application         : No active profile set, falling back to 1 default profile: "default"
+2023-02-05 16:40:28.128  INFO 13232 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-02-05 16:40:28.177  INFO 13232 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 42 ms. Found 2 JPA repository interfaces.
+2023-02-05 16:40:28.581  INFO 13232 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-02-05 16:40:28.587  INFO 13232 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-02-05 16:40:28.588  INFO 13232 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.70]
+2023-02-05 16:40:28.882  INFO 13232 --- [main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2023-02-05 16:40:28.914  INFO 13232 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-02-05 16:40:28.915  INFO 13232 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1202 ms
+2023-02-05 16:40:29.037  INFO 13232 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-02-05 16:40:29.070  INFO 13232 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.14.Final
+2023-02-05 16:40:29.182  INFO 13232 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-02-05 16:40:29.260  INFO 13232 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-02-05 16:40:29.479  INFO 13232 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-02-05 16:40:29.501  INFO 13232 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-02-05 16:40:29.905  INFO 13232 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-02-05 16:40:29.914  INFO 13232 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-02-05 16:40:30.191  WARN 13232 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-02-05 16:40:30.302  INFO 13232 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-02-05 16:40:30.442  INFO 13232 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-05 16:40:30.448  INFO 13232 --- [main] DC3160.HLSP.v2.HlspV2Application         : Started HlspV2Application in 3.104 seconds (JVM running for 3.413)
+2023-02-05 16:41:35.981  INFO 13232 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-02-05 16:41:35.981  INFO 13232 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-02-05 16:41:35.982  INFO 13232 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-02-05 16:41:36.000  INFO 13232 --- [http-nio-8080-exec-1] D.HLSP.v2.controller.RegisterController  : Hello, world!
+2023-02-05 16:46:57.120  INFO 22796 --- [main] DC3160.HLSP.v2.HlspV2Application         : Starting HlspV2Application using Java 15.0.2 on BRAD-PC with PID 22796 (C:\Users\bradl\Documents\University\Stage F\Block 3A\Enterprise Application Technology\Coursework\HLSP-v2\target\classes started by bradl in C:\Users\bradl\Documents\University\Stage F\Block 3A\Enterprise Application Technology\Coursework\HLSP-v2)
+2023-02-05 16:46:57.122  INFO 22796 --- [main] DC3160.HLSP.v2.HlspV2Application         : No active profile set, falling back to 1 default profile: "default"
+2023-02-05 16:46:57.576  INFO 22796 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-02-05 16:46:57.632  INFO 22796 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 48 ms. Found 2 JPA repository interfaces.
+2023-02-05 16:46:58.059  INFO 22796 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-02-05 16:46:58.068  INFO 22796 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-02-05 16:46:58.068  INFO 22796 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.70]
+2023-02-05 16:46:58.350  INFO 22796 --- [main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2023-02-05 16:46:58.383  INFO 22796 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-02-05 16:46:58.383  INFO 22796 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1230 ms
+2023-02-05 16:46:58.508  INFO 22796 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-02-05 16:46:58.540  INFO 22796 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.14.Final
+2023-02-05 16:46:58.656  INFO 22796 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-02-05 16:46:58.744  INFO 22796 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-02-05 16:46:58.961  INFO 22796 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-02-05 16:46:58.986  INFO 22796 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-02-05 16:46:59.447  INFO 22796 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-02-05 16:46:59.454  INFO 22796 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-02-05 16:46:59.751  WARN 22796 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-02-05 16:46:59.873  INFO 22796 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-02-05 16:47:00.031  INFO 22796 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-05 16:47:00.038  INFO 22796 --- [main] DC3160.HLSP.v2.HlspV2Application         : Started HlspV2Application in 3.237 seconds (JVM running for 3.547)
+2023-02-05 16:47:12.745  INFO 22796 --- [http-nio-8080-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-02-05 16:47:12.745  INFO 22796 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-02-05 16:47:12.746  INFO 22796 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-02-05 16:47:28.146  INFO 22796 --- [http-nio-8080-exec-4] D.HLSP.v2.controller.RegisterController  : Site accessed via Get /
+2023-02-05 16:47:36.803  INFO 22796 --- [http-nio-8080-exec-5] D.HLSP.v2.controller.RegisterController  : Site accessed via Get /
+2023-02-05 16:47:48.504  INFO 22796 --- [http-nio-8080-exec-9] D.HLSP.v2.controller.RegisterController  : Get /register
+2023-02-05 16:48:30.008  INFO 22796 --- [http-nio-8080-exec-10] D.HLSP.v2.controller.RegisterController  : Post /register with form data: {email=2bradley.willies@googlemail.com, password=Password1!}
+2023-02-05 16:59:04.192  INFO 23748 --- [main] DC3160.HLSP.v2.HlspV2Application         : Starting HlspV2Application using Java 15.0.2 on BRAD-PC with PID 23748 (C:\Users\bradl\Documents\University\Stage F\Block 3A\Enterprise Application Technology\Coursework\HLSP-v2\target\classes started by bradl in C:\Users\bradl\Documents\University\Stage F\Block 3A\Enterprise Application Technology\Coursework\HLSP-v2)
+2023-02-05 16:59:04.194  INFO 23748 --- [main] DC3160.HLSP.v2.HlspV2Application         : No active profile set, falling back to 1 default profile: "default"
+2023-02-05 16:59:04.642  INFO 23748 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-02-05 16:59:04.692  INFO 23748 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 43 ms. Found 2 JPA repository interfaces.
+2023-02-05 16:59:05.106  INFO 23748 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-02-05 16:59:05.124  INFO 23748 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-02-05 16:59:05.124  INFO 23748 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.70]
+2023-02-05 16:59:05.399  INFO 23748 --- [main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2023-02-05 16:59:05.430  INFO 23748 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-02-05 16:59:05.430  INFO 23748 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1203 ms
+2023-02-05 16:59:05.550  INFO 23748 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-02-05 16:59:05.584  INFO 23748 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.14.Final
+2023-02-05 16:59:05.704  INFO 23748 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-02-05 16:59:05.788  INFO 23748 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-02-05 16:59:06.027  INFO 23748 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-02-05 16:59:06.047  INFO 23748 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-02-05 16:59:06.472  INFO 23748 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-02-05 16:59:06.478  INFO 23748 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-02-05 16:59:06.748  WARN 23748 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-02-05 16:59:06.861  INFO 23748 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-02-05 16:59:07.004  INFO 23748 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-05 16:59:07.011  INFO 23748 --- [main] DC3160.HLSP.v2.HlspV2Application         : Started HlspV2Application in 3.161 seconds (JVM running for 3.469)
+2023-02-05 16:59:42.665  INFO 23748 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-02-05 16:59:42.665  INFO 23748 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-02-05 16:59:42.667  INFO 23748 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-02-05 16:59:42.685  INFO 23748 --- [http-nio-8080-exec-1] D.HLSP.v2.controller.RegisterController  : Site accessed via Get /
+2023-02-05 16:59:44.056  INFO 23748 --- [http-nio-8080-exec-2] D.HLSP.v2.controller.RegisterController  : Get /login
+2023-02-05 16:59:46.247  INFO 23748 --- [http-nio-8080-exec-3] D.HLSP.v2.controller.RegisterController  : Post /login with email: bradley.willies@googlemail.com
+2023-02-05 16:59:48.094  INFO 23748 --- [http-nio-8080-exec-4] D.HLSP.v2.controller.RegisterController  : Get /dailyEntryForm
+2023-02-05 16:59:57.132  INFO 23748 --- [http-nio-8080-exec-6] D.HLSP.v2.controller.RegisterController  : Post /dailyEntryForm validating input...
+2023-02-05 16:59:57.132  INFO 23748 --- [http-nio-8080-exec-6] D.HLSP.v2.controller.RegisterController  : Input valid, entering daily entry
+2023-02-05 17:01:59.145  INFO 23748 --- [http-nio-8080-exec-8] D.HLSP.v2.controller.RegisterController  : Get /dailyEntryForm

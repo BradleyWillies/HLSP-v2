@@ -18,6 +18,8 @@ import DC3160.HLSP.v2.model.Session;
 import DC3160.HLSP.v2.service.DailyEntryService;
 import DC3160.HLSP.v2.service.UserService;
 
+import java.util.logging.Logger;
+
 @Controller
 @SessionAttributes("userSession")
 public class RegisterController {
@@ -27,6 +29,8 @@ public class RegisterController {
 	@Autowired
 	private DailyEntryService dailyEntryService;
 	
+	private static final Logger LOG = Logger.getLogger(RegisterController.class.getName());
+	
 	@ModelAttribute(name = "userSession")
     public Session setUserSession() {
         return new Session();
@@ -34,11 +38,13 @@ public class RegisterController {
 	
 	@GetMapping("/")
 	public String home() {
+		LOG.info("Site accessed via Get /");
 		return "index";
 	}
 
 	@GetMapping(path = {"/register", ""})
 	public String doGet(@ModelAttribute("userSession") Session userSession) {
+		LOG.info("Get /register");
 		// if the session exists go to the dashboard
 		if (userSession.getUser() != null) {
 			return "dashboard.html";
@@ -52,6 +58,7 @@ public class RegisterController {
 	@PostMapping(path = "/register")
 	public ModelAndView doPost(@RequestParam Map<String, String> formData, 
 			@ModelAttribute("userSession") Session userSession) {
+		LOG.info("Post /register with email: " + formData.get("email"));
         // get the input credentials
         String email = formData.get("email");
         String password = formData.get("password");

@@ -1,6 +1,7 @@
 package DC3160.HLSP.v2.controller;
 
 import java.util.Map;
+import java.util.logging.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -25,6 +26,8 @@ public class LoginController {
 	
 	@Autowired
 	private DailyEntryService dailyEntryService;
+	
+	private static final Logger LOG = Logger.getLogger(RegisterController.class.getName());
 
 	@ModelAttribute(name = "userSession")
 	public Session setUserSession() {
@@ -33,6 +36,7 @@ public class LoginController {
 
 	@GetMapping(path = "/login")
 	public String doGet(@ModelAttribute("userSession") Session userSession) {
+		LOG.info("Get /login");
 		// if the session exists go to the dashboard
 		if (userSession.getUser() != null) {
 			return "dashboard.html";
@@ -46,6 +50,7 @@ public class LoginController {
 	@PostMapping(path = "/login")
 	public ModelAndView doPost(@RequestParam Map<String, String> formData, 
 			@ModelAttribute("userSession") Session userSession) {
+		LOG.info("Post /login with email: " + formData.get("email"));
 		// get the input credentials
 		String email = formData.get("email");
 		String password = formData.get("password");

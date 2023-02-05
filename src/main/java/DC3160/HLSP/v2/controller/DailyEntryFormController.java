@@ -3,6 +3,7 @@ package DC3160.HLSP.v2.controller;
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Map;
+import java.util.logging.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,15 +23,19 @@ import DC3160.HLSP.v2.service.DailyEntryService;
 public class DailyEntryFormController {
 	@Autowired
 	private DailyEntryService dailyEntryService;
+	
+	private static final Logger LOG = Logger.getLogger(RegisterController.class.getName());
 
 	@GetMapping(path = "/dailyEntryForm")
 	public ModelAndView doGet() {
+		LOG.info("Get /dailyEntryForm");
 		return new ModelAndView("dailyEntryForm.html");
 	}
 
 	@PostMapping(path = "/dailyEntryForm")
 	public ModelAndView doPost(@RequestParam Map<String, String> formData,
 			@ModelAttribute("userSession") Session userSession) {
+		LOG.info("Post /dailyEntryForm validating input...");
 		// create variables for the entry form values
 		int mealCalories = 0;
 		int exerciseCalories = 0;
@@ -88,6 +93,7 @@ public class DailyEntryFormController {
 				exerciseSteps, workTime, workStress, sleepTime, sleepRestfulness, meditationTime);
 
 		if (formErrors.size() == 0) {
+			LOG.info("Input valid, entering daily entry");
 			// use user in session to get id
 			int userId = userSession.getUser().getId();
 
@@ -114,6 +120,7 @@ public class DailyEntryFormController {
 			// set the session attributes and return to the dashboard
 			return new ModelAndView("dashboard.html");
 		} else {
+			LOG.info("Invalid input, errors: " + formErrors.toString());
 			// redirect back to login with error for new login attempt
 			ModelAndView modelAndView = new ModelAndView("dailyEntryForm.html");
 			modelAndView.addObject("errors", formErrors);
